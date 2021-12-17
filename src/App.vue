@@ -1,17 +1,25 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template >
+  <h2 v-for="t in todo" v-bind:key="t.text" v-bind:style="style" > {{t.text}}</h2>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data()
+  {return{
+    num:3,
+    todo:[
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ],
+    style:{
+      color:'red'
+    }
   }
-}
+}}
 </script>
 
 <style>
